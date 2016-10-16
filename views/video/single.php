@@ -9,7 +9,7 @@ $this->title = 'Видео';
         <div class="row">
             <div id="main-content" class="col-2-3">
                 <div class="wrap-vid">
-                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/isJIAV_9EjE" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="40%" height="200" src="https://www.youtube.com/embed/isJIAV_9EjE" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="row">
                     <div class="share">

@@ -83,8 +83,8 @@ header .bottom a{color: #fff;text-decoration: underline;}
 .share .box-share{border: 1px solid #ddd;padding: 20px 0;max-width: 150px;height: 100px;}
 .share .box-share i{font-size: 30px;display: block;}
 
-.tags {margin: 15px 0;border: 1px solid #ddd;padding: 30px ;}
-.tags a{background: #E73737;padding: 10px;color: #fff;}
+.tags {margin: 1px 0;border: 1px solid #ddd;padding: 30px ;}
+.tags a{background: #E73737;padding: 1px;color: #fff;}
 /* ---------------------------------------------------------------------------- */
 /* -------------------------------------Container------------------------------ */
 /* ---------------------------------------------------------------------------- */
@@ -303,3 +303,18 @@ textarea {display:block;width:90%;height:200px; border-radius:4px;-webkit-border
 .navigation{text-align: center;margin-top: 20px;}
 .navigation ul li{display: inline-block;}
 .navigation ul li a{background-color: #fff;border: 1px solid #ddd;padding: 7px 13px;}
+
+
+
+.main_text_title{
+
+	color: #fd0909;
+}
+
+.main_text_ru{
+	font-family: "Comic Sans MS", sans-serif;
+	color: #3872d3;
+}
+.main_text_en{
+color: #1ed206;
+}

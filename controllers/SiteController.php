@@ -8,6 +8,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Video;
+use yii\data\Pagination;
 
 class SiteController extends Controller
 {
@@ -53,15 +55,8 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * Displays homepage.
-     *
-     * @return string
-     */
-    public function actionIndex()
-    {
-        return $this->render('index');
-    }
+
+
 
 
 
@@ -128,5 +123,64 @@ class SiteController extends Controller
     public function actionAboutBeagel()
     {
         return $this->render('aboutbeagel');
+    }
+
+
+
+    public function actionIndex()
+    {
+        $query_text = Video::find()->where(['hide' => 1]);
+        //  $pagination = new Pagination([
+        //      'defaultPageSize' => 4,
+        //      'totalCount' => $query->count()
+        //  ]);
+
+        $main_desc_videos = $query_text->orderBy(['date' => SORT_DESC])
+
+            ->one();
+
+
+        $query = Video::find()->where(['hide' => 1]);
+      //  $pagination = new Pagination([
+      //      'defaultPageSize' => 4,
+      //      'totalCount' => $query->count()
+      //  ]);
+
+        $videos_recents = $query->orderBy(['date' => SORT_DESC])
+
+            ->all();
+
+
+        //Video RUS
+        $query_russ = Video::find()->where(['rus' => 1]);
+        //  $pagination = new Pagination([
+        //      'defaultPageSize' => 4,
+        //      'totalCount' => $query->count()
+        //  ]);
+
+        $videos_russ = $query_russ->orderBy(['date' => SORT_DESC])
+
+            ->all();
+
+
+        //Video ENG
+        $query_eng = Video::find()->where(['eng' => 1]);
+        //  $pagination = new Pagination([
+        //      'defaultPageSize' => 4,
+        //      'totalCount' => $query->count()
+        //  ]);
+
+        $videos_engs = $query_eng->orderBy(['date' => SORT_DESC])
+
+            ->all();
+
+
+        return $this->render('index',[
+            'main_desc_videos' => $main_desc_videos,
+            'videos_recents' => $videos_recents,
+            'videos_russ'    => $videos_russ,
+            'videos_engs'     => $videos_engs,
+
+        ]);
     }
 }

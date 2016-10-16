@@ -33,7 +33,7 @@ class ArticlesController extends \yii\web\Controller
 
         //Полная стать, вывод полной статьи
         //One articles
-        $artOne = Articles::find()->where(['hide' => 1]);
+      //  $artOne = Articles::find()->where(['hide' => 1]);
 
 
 
@@ -41,7 +41,7 @@ class ArticlesController extends \yii\web\Controller
         return $this->render('index',[
             'articles' => $articles,
             'artMenuRights' => $artMenuRights,
-            'artOne' => $artOne,
+           // 'artOne' => $artOne,
             'active_page' => \Yii::$app->request->get("page", 1),
             'count_pages' => $pagination->getPageCount(),
             'pagination' => $pagination
